@@ -1,0 +1,41 @@
+<div class="card login">
+    <h5 class="card-title position-center">Product Inventory Register here</h5>
+    <div class="card-body">
+        <form [formGroup]="userRegistrationForm" (ngSubmit)="register()">
+            <div class="form-group">
+                <label class="text-muted">First Name</label>
+                <input type="text" class="form-control" placeholder="Enter First Name" formControlName="firstName">
+                <small *ngIf="!IsFormValid" 
+                class="form-text text-muted">Please provide First Name</small>
+            </div>
+            <div class="form-group">
+                <label class="text-muted">Last Name</label>
+                <input type="text" class="form-control" formControlName="lastName" placeholder="Enter Last Name">
+                <small *ngIf="!IsFormValid"  
+                class="form-text text-muted">Please provide Last Name</small>
+            </div>
+            <div class="form-group">
+                <label class="text-muted">Location</label>
+                <input type="text" class="form-control" formControlName="location" placeholder="Enter Location">
+            </div>
+            <div class="form-group">
+                <label class="text-muted">Mobile</label>
+                <input type="text" class="form-control" formControlName="mobile" placeholder="Enter Mobile">
+            </div>
+            <div class="form-group">
+                <label class="text-muted">Email</label>
+                <input type="text" class="form-control" formControlName="userid" placeholder="Enter Email">
+                <small *ngIf="!IsFormValid" 
+                class="form-text text-muted">Please provide an email</small>
+            </div>
+            <div class="form-group">
+                <label class="text-muted">Password</label>
+                <input type="password" class="form-control" formControlName="password" placeholder="Enter Password">
+                <small *ngIf="!IsFormValid" 
+                class="form-text text-muted">Please provide a min 6 character password</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+            <a [routerLink]="['/login']">Login Here</a>
+        </form>
+    </div>
+</div>
